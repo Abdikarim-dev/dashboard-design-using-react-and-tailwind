@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className="flex justify-between items-center px-6 py-2 border border-b-1 border-[#E4E4E7]">
       <div className="flex justify-between items-center gap-9">
-        <div className="brand-name text-5xl tracking-widest ">Simple Dash.</div>
+        <div className="text-2xl font-semibold ">Simple</div>
         <ul className="flex justify-between items-center text-lg gap-6 text-[#82828A]">
           <li className="text-black">Intro</li>
           <li>Customers</li>

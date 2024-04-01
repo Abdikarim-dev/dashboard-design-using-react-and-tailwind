@@ -3,8 +3,36 @@ import Button from "./Button";
 import CustomDate from "./Date";
 import LineGraph from "./LineGraph";
 import TopSales from "./TopSales";
+import Overview from "./Overview";
 
 function Main() {
+  const review = [
+    {
+      name:"Total Revenue",
+      price:"$45,231.89",
+      review:"+20.1% from last month",
+      icon:"fa-solid fa-dollar-sign"
+
+    },
+    {
+      name:"Subscriptions",
+      price:"+2350",
+      review:"+180.1% from last month",
+      icon:"fa-solid fa-user-group"
+    },
+    {
+      name:"Sales",
+      price:"+12,234",
+      review:"+19% from last month",
+      icon:"fa-solid fa-weight-scale"
+    },
+    {
+      name:"Active Now",
+      price:"+573",
+      review:"+201 since last hour",
+      icon:"fa-solid fa-chart-line"
+    },
+  ]
   return (
     <div className="px-10 pt-[1rem]">
       <header className="flex justify-between items-center">
@@ -15,46 +43,11 @@ function Main() {
         </div>
       </header>
       <section className="flex justify-between items-center pt-[0.5rem]">
-        <div className="w-[350px] flex justify-between border border-[#E4E4E7] rounded-lg px-4 py-3">
-          <div>
-            <h3 className="pb-3 text-lg">Total Revenue</h3>
-            <p className="text-3xl font-semibold">$45,231.89</p>
-            <p className="text-[#82828A] text-md">+20.1% from last month</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-dollar-sign text-[#82828A]"></i>
-          </div>
-        </div>
-        <div className="w-[350px] flex justify-between border border-[#E4E4E7] rounded-lg px-4 py-3">
-          <div>
-            <h3 className="pb-3 text-lg">Total Revenue</h3>
-            <p className="text-3xl font-semibold">$45,231.89</p>
-            <p className="text-[#82828A] text-md">+20.1% from last month</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-dollar-sign text-[#82828A]"></i>
-          </div>
-        </div>
-        <div className="w-[350px] flex justify-between border border-[#E4E4E7] rounded-lg px-4 py-3">
-          <div>
-            <h3 className="pb-3 text-lg">Total Revenue</h3>
-            <p className="text-3xl font-semibold">$45,231.89</p>
-            <p className="text-[#82828A] text-md">+20.1% from last month</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-dollar-sign text-[#82828A]"></i>
-          </div>
-        </div>
-        <div className="w-[350px] flex justify-between border border-[#E4E4E7] rounded-lg px-4 py-3">
-          <div>
-            <h3 className="pb-3 text-lg">Total Revenue</h3>
-            <p className="text-3xl font-semibold">$45,231.89</p>
-            <p className="text-[#82828A] text-md">+20.1% from last month</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-dollar-sign text-[#82828A]"></i>
-          </div>
-        </div>
+        {
+          review.map(review=>(
+            <Overview name={review.name} price={review.price} review={review.review} icon={review.icon} />
+          ))
+        }
       </section>
       <section className="pt-[1rem]">
         <div className=" flex justify-between items-center gap-3">
